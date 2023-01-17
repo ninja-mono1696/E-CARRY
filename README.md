@@ -18,13 +18,13 @@ This a collaborative team project of four members to make a responsive E-commerc
 
 ## Tech Stacks :-
 
--HTML
--CSS
--JavaScript
--React
--Redux
--Json-server
--External CSS libraries
+- HTML
+- CSS
+- JavaScript
+- React
+- Redux
+- Json-server
+- External CSS libraries
 
 ## Team members :-
 
