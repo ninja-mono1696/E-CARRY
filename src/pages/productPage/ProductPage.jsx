@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios"
 import ProductCard from "../../components/productCard/ProductCard";
 import { ProductCardTopBar } from "../../components/productCard/ProductCardTopBar";
+import { ProductCardSideBar } from "../../components/productCard/productCardSideBar";
  
 const ProductPage = () => {
 const[watches,setWatches]=useState([])
@@ -16,7 +17,11 @@ const getWatches=()=>{
 getWatches()
   return <div>
     <ProductCardTopBar/>
+    <div style={{display:'flex'}}>
+    <ProductCardSideBar/>
   <ProductCard watches={watches}/>
+    </div>
+   
 </div>;
 };
 

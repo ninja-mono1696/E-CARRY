@@ -67,7 +67,7 @@
     },
     {
       "id": 7,
-      "image": "https://www.dailyobjects.com/charcoal-braided-solo-loop-apple-watchband-38-40mm/dp?f=pid~CHRCL-BRD-SOLO-LOOP-APL-IWATCH-STRP-38&s=referer~lp",
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/charcoal-braided-solo-loop-apple-watchband-42-44mm-images/Charcoal-Braided-Solo-Loop-Apple-WatchBand-Vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
       "title": "Charcoal Braided Solo Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
@@ -89,8 +89,8 @@
     },
 
     {
-      "id": 2,
-      "image": "https://www.dailyobjects.com/space-black-magnetic-milanese-loop-apple-watchband-38-40mm/dp?f=pid~SPCEBLK-MGT-MLES-LOP-APL-IWTCH-STRP-38&s=referer~lp",
+      "id": 9,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/space-black-magnetic-milanese-loop-apple-watchband-42-44mm-images/Space-Black-Magnetic-Milanese-Loop-Apple-WatchBand-38-40-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
       "title": "Space Black Magnetic Milanese Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
@@ -100,9 +100,9 @@
 
     },
     {
-      "id": 3,
-      "image": "https://www.dailyobjects.com/blue-braided-solo-loop-apple-watchband-38-40mm/dp?f=pid~BLUE-BRD-SOLO-LOOP-APL-IWATCH-STRP-38&s=referer~lp",
-      "title": "Blue Braided Solo Loop Apple WatchBand (38/40/41mm)",
+      "id": 10,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/blue-magnetic-milanese-loop-apple-watchband-38-40mm-images/Blue-Magnetic-Milanese-Loop-Apple-WatchBand-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Blue  Milanese Loop Solo Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "milanese loop",
@@ -111,9 +111,9 @@
 
     },
     {
-      "id": 4,
-      "image": "https://www.dailyobjects.com/rose-gold-magnetic-milanese-loop-apple-watchband-42-44mm/dp?f=pid~ROSE-GLD-MGT-MLES-LOP-APL-IWTCH-STRP-42&s=referer~lp",
-      "title": "Pink Braided Solo Loop Apple WatchBand (38/40/41mm)",
+      "id": 41,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/rose-gold-magnetic-milanese-loop-apple-watchband-38-40mm-images/Rose-Gold-Magnetic-Milanese-Loop-Apple-WatchBand-42-44-45.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Pink  Milanese Loop Solo Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "milanese loop",
@@ -122,9 +122,9 @@
 
     },
     {
-      "id": 5,
-      "image": "https://www.dailyobjects.com/red-braided-solo-loop-apple-watchband-38-40mm/dp?f=pid~RED-BRD-SOLO-LOOP-APL-IWATCH-STRP-38&s=referer~lp",
-      "title": "Red Braided Solo Loop Apple WatchBand (38/40/41mm)",
+      "id": 11,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/maroon-magnetic-milanese-loop-apple-watchband-38-40mm-images/Maroon-Magnetic-Milanese-Loop-Apple-WatchBand-38-40-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Red  Milanese Loop Solo Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "milanese loop",
@@ -133,125 +133,124 @@
 
     },
     {
-      "id": 6,
-      "image": "https://images.dailyobjects.com/marche/product-images/1801/blue-magnetic-milanese-loop-apple-watchband-38-40mm-images/Blue-Magnetic-Milanese-Loop-Apple-WatchBand-2.png?tr=cm-pad_resize,v-2,w-348,h-429,dpr-1",
-      "title": "Blue Braided Solo Loop Apple WatchBand (38/40/41mm)",
+      "id": 12,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/blue-magnetic-milanese-loop-apple-watchband-38-40mm-images/Blue-Magnetic-Milanese-Loop-Apple-WatchBand-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Blue Magnetic Milanese Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "milanese loop",
-      "color":"Silver"
+      "color":"Blue"
       
 
     },
     {
-      "id": 7,
-      "image": "https://www.dailyobjects.com/charcoal-braided-solo-loop-apple-watchband-38-40mm/dp?f=pid~CHRCL-BRD-SOLO-LOOP-APL-IWATCH-STRP-38&s=referer~lp",
-      "title": "Charcoal Braided Solo Loop Apple WatchBand (38/40/41mm)",
+      "id": 13,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/rainbow-magnetic-milanese-loop-apple-watchband-42-44mm-images/Rainbow-Magnetic-Milanese-Loop-Apple-WatchBand-38-40-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Rainbow  Magnetic Milanese Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "milanese loop",
-      "color":"Charcoal"
+      "color":"Rainbow"
       
 
     },
    {
-      "id": 8,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Olive Braided Solo Loop Apple WatchBand (38/40/41mm)",
+      "id": 14,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/graphite-magnetic-milanese-loop-apple-watchband-42-44mm-images/Graphite-Magnetic-Milanese-Loop-Apple-WatchBand-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Graphite  Milanese Loop Solo Loop Apple WatchBand (38/40/41mm)",
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "milanese loop",
-      "color":"Olive"
+      "color":"Graphite"
       
 
     },
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
+      "id": 21,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/blue-ribbed-fit-apple-watch-series-case-with-screen-protector-40mm-images/Blue-Ribbed-Fit-Apple-Watch-Series-Case-with-Screen-Protector.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
       "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Blue"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
+      "id": 22,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/silver-tough-fit-apple-watch-series-case-44mm-images/Silver-Tough-Fit-Apple-Watch-Series-Case-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Silver Tough Fit Apple Watch Series Case (44mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Silver"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
+      "id": 23,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/black-tough-fit-apple-watch-series-case-44mm-images/Black-Tough-Fit-Apple-Watch-Series-Case-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Black Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Black"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
+      "id": 24,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/army-green-athletic-fit-apple-watch-series-case-with-screen-protector-44mm-images/Army-Green-Athletic-Fit-Apple-Watch-Series-Case-with-Screen-Protector-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Army Green Athletic Fit Apple Watch Series Case with Screen Protector (44mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Green"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
+      "id": 25,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/pink-ribbed-fit-apple-watch-series-case-with-screen-protector-40mm-images/Pink-Ribbed-Fit-Apple-Watch-Series-Case-with-Screen-Protector-1s.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "title": "Pink Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Pink"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
+      "id": 26,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/silver-tough-fit-apple-watch-series-case-44mm-images/Silver-Tough-Fit-Apple-Watch-Series-Case-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
       "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Silver"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
+      "id": 27,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/rosegold-sleek-fit-apple-watch-series-case-with-screen-protector-44mm-images/Rosegold-Sleek-Fit-Apple-Watch-Series-Case-with-Screen-Protector.jpg?tr=cm-pad_crop,v-2,w-759,h-648,dpr-1",
+      "title": "Rose-gold Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive"
+      "color":"Rose-gold"
       
 
     } ,
     {
-      "id": 9,
-      "image": "https://www.dailyobjects.com/olive-braided-solo-loop-apple-watchband-42-44mm/dp?f=pid~OLIVE-BRD-SOLO-LOOP-APL-IWATCH-STRP-42&s=referer~lp",
-      "title": "Blue Ribbed Fit Apple Watch Series Case with Screen Protector (40mm)",
+      "id": 28,
+      "image": "https://images.dailyobjects.com/marche/product-images/1801/clear-sleek-fit-apple-watch-series-case-with-screen-protector-44mm-images/Clear-Sleek-Fit-Apple-Watch-Series-Case-with-Screen-Protector.jpg?tr=cm-pad_crop,v-2,w-759,h-648,dpr-1",
+      "title": " Clear Sleek Fit Apple Watch Series Case with Screen Protector (44mm)",
       "salePrice": "1499",
       "discountPrice": "499",
       "category": "Watch Case",
-      "color":"Olive",
-      "material_image":"https://images.dailyobjects.com/marche/icons/category/watchband-case-filter-icon.jpg?tr=cm-pad_crop,v-2,w-70,h-69,dpr-1"
-      
+      "color":"Clear"
+
 
     } 
   ]

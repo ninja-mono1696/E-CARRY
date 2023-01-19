@@ -1,9 +1,9 @@
 .watches-container{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 450px;
-width:100%;
-margin:auto;
+    grid-template-rows: 550px;
+width:70%;
+margin-left: 10%;
     border : 1px solid red;
     
 

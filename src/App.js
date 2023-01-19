@@ -8,11 +8,11 @@ import ProductPage from './pages/productPage/ProductPage';
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
-      {/* <Mainroute /> */}
-      {/* <Footer /> */}
+      <Navbar />
+      <Mainroute />
+      <Footer />
 
-      <ProductPage/>
+   
     </div>
   );
 }
