@@ -1,15 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginFalureAction, loginRequestAction, loginSuccsesAction } from "../../redux/authReducer/action";
+import { store } from "../../redux/store";
+import AccountPage from "../../pages/accountPage/AccountPage";
 
 
 const Login = () => {
   const[email,setEmail]=useState("");
   const [password,setPassword]=useState("");
 
-  // const 
+  const isAuth=useSelector((store)=>store.authReducer.isAuth);
 
   let dispatch=useDispatch();
 
@@ -24,10 +26,11 @@ const Login = () => {
       dispatch(loginSuccsesAction(res.data.token));
     }).catch((err)=>{
       console.log(err);
+      dispatch(loginFalureAction());
     })
   };
 
-  return <div>
+  return <div >
     <h1>Login</h1>
     <input 
     type="email" 
@@ -40,6 +43,8 @@ const Login = () => {
     onChange={(e)=>setPassword(e.target.value)}
      />
      <button onClick={handleLogin}>Submit</button>
+     
+     {isAuth&&<AccountPage/>}
   </div>;
 };
 
