@@ -5,7 +5,7 @@ const ProductCard = ({ watches }) => {
   const styles = {
     border: "1px solid black",
   };
-  
+
   return (
     <div className="watches-container">
       {/* ProductCard */}

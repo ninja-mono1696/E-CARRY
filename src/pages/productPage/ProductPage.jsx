@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import ProductCard from "../../components/productCard/ProductCard";
 import { ProductCardTopBar } from "../../components/productCard/ProductCardTopBar";
-import { ProductCardSideBar } from "../../components/productCard/productCardSideBar";
+import { ProductCardSideBar } from "../../components/productCard/ProductCardSideBar";
 
 const ProductPage = () => {
   const [watches, setWatches] = useState([]);
