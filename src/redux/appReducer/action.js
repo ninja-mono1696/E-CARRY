@@ -30,7 +30,7 @@ export const getCarttotalQuantityAction=()=>{
 
  export const getWatches=()=>(dispatch)=>{
     dispatch(getProdcutRequestAction())
-    axios.get(` http://localhost:8080/watches`).then((res)=>{
+    axios.get(`http://localhost:8080/watches`).then((res)=>{
       console.log(res.data)
       dispatch(getProdcutSuccessAction(res.data))
 
