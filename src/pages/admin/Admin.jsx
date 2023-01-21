@@ -11,7 +11,6 @@ import {
   Flex,
 } from "@chakra-ui/react"
 import Sidebar from "./SideBar/SideBar"
-import { FiMenu } from "react-icons/fi"
 import { Example } from "./useRadio"
 import axios from "axios"
 const init = {
