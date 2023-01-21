@@ -28,8 +28,13 @@ export const ProductCardSideBar = () => {
         ))}
       </div>
       <h2>Sort by price</h2>
+<<<<<<< HEAD
       <button>Low to High</button>
       <button>High to Low</button>
+=======
+    
+     <button>Hight to low</button>
+>>>>>>> master
     </div>
   );
 };
