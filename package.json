@@ -36,9 +36,14 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
+<<<<<<< HEAD
     "shortid": "^2.2.16",
+=======
+    "slick-carousel": "^1.8.1",
+>>>>>>> 4eda9a97048375965e0b08ea633f5395823081f3
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
