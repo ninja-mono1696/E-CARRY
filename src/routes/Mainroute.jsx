@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AccountPage from "../pages/accountPage/AccountPage";
+import Log from "../components/login/Log";
+import SimpleSidebar from "../pages/accountPage/Account";
+// import {Account} from "../pages/accountPage/Account";
 import Admin from "../pages/admin/Admin";
 import Cart from "../pages/cartPage/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
@@ -15,12 +17,14 @@ const Mainroute = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/account" element={<AccountPage />} />
+        {/* <Route path="/account" element={<Account />} /> */}
+        <Route path="/login" element={<Log />} />
         <Route path="/search" element={<Search />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/simpleside" element={<SimpleSidebar/>}/>
       </Routes>
     </div>
   );
