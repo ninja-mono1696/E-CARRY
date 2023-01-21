@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Navigate } from 'react-router-dom'
+
 export const SingleProductPage = () => {
   const [isCart,setIsCart]=useState(false)
   const[count,setCount]=useState(0)

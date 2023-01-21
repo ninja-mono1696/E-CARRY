@@ -2,6 +2,7 @@ import React from "react";
 import "./productCard.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getsingleProduct } from "../../redux/appReducer/action";
+import { Link } from "react-router-dom";
 const ProductCard = ({ watches }) => {
   const styles = {
     border: "1px solid black",
@@ -15,10 +16,13 @@ const ProductCard = ({ watches }) => {
 
       {watches.map((el) => {
         return (
-          <div style={styles} onClick={()=>dispatch(getsingleProduct(el.id))}>
+      
+         <div style={styles} onClick={()=>dispatch(getsingleProduct(el.id))}>
+          <Link to={`/products/${el.id}`}>
             <div style={{ backgroundColor: "whitesmoke",height:"70%"}}>
               <img src={el.image} />
             </div>
+            </Link>
 
             <div>
               <p>{el.title}</p>
@@ -38,6 +42,7 @@ const ProductCard = ({ watches }) => {
         );
       })}
     </div>
+ 
   );
 };
 

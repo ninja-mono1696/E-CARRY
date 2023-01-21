@@ -6,7 +6,7 @@ import Cart from "../pages/cartPage/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
 import Home from "../pages/homePage/Home";
 import ProductPage from "../pages/productPage/ProductPage";
-import SingleProductPage from "../pages/productPage/singleProductPage/SingleProductPage";
+import {SingleProductPage} from "../pages/productPage/singleProductPage/SingleProductPage";
 import Search from "../pages/searchPage/Search";
 
 const Mainroute = () => {

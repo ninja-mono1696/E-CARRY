@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getWatches } from "../../redux/appReducer/action";
  
-const ProductPage = () => {
+ const ProductPage = () => {
 // const[watches,setWatches]=useState([])
 const dispatch =useDispatch()
 const watches = useSelector((store)=>store.appReducer.watches)
