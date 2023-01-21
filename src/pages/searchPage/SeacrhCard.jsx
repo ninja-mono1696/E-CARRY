@@ -4,7 +4,11 @@ import { Link, useSearchParams } from "react-router-dom"
 
 function SeacrhCard({ id, image, title, salePrice, discountPrice }) {
   return (
-    <div>
+    <div
+      style={{
+        padding: "10px",
+      }}
+    >
       <Link to={`/search/${id}`}>{title}</Link>
     </div>
   )

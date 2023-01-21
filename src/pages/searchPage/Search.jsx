@@ -21,7 +21,15 @@ const Search = () => {
   }, [query])
   return (
     <div>
-      <h3>Search Query: {query}</h3>
+      <h3
+        style={{
+          marginLeft: "170px",
+          color: "darkgreen",
+          fontWeight: "normal",
+        }}
+      >
+        Search
+      </h3>
       <SearchBarInput queryHandler={queryHandler} suggestions={suggestions} />
     </div>
   )
