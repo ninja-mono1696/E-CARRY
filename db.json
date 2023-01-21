@@ -1,45 +1,5 @@
 {
   "products": [
-    {
-<<<<<<< HEAD
-      "title": "Bags",
-      "image": "https://m.media-amazon.com/images/I/610fN3RyKFL._UY500_.jpg",
-      "salePrice": "1200",
-      "discountPrice": "700",
-      "category": "Shoes",
-      "color": "Green",
-      "id": 1
-=======
-      "id": 1,
-      "image": "",
-      "title": "",
-      "salePrice": "",
-      "discountPrice": "",
-      "category": ""
-    }
-  ],
-  "watches": [
-    {
-      "id": 2,
-      "image": "https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
-      "title": "Black Braided Solo Loop Apple WatchBand (42/44/45/49mm)",
-      "salePrice": "3499",
-      "discountPrice": "1699",
-      "category": "Braided",
-      "color":"Black",
-      "detail_url1":"https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-1.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
-      "detail_url2":"https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-2n.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1"
-
->>>>>>> 4eda9a97048375965e0b08ea633f5395823081f3
-    },
-    {
-      "title": "BAgs",
-      "image": "https://m.media-amazon.com/images/I/71LXSf7dHFL._SL1500_.jpg",
-      "salePrice": "123",
-      "discountPrice": "123",
-      "category": "Shoes",
-      "color": "Cyan",
-      "id": 2
-    }
+    
   ]
 }
