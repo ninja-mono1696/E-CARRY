@@ -3,19 +3,17 @@ import Navbar from "./components/navbar/Navbar";
 import Mainroute from "./routes/Mainroute";
 import Footer from "./components/footer/Footer";
 
-import Log from "./components/login/Log";
-import {SimpleSidebar} from "./pages/accountPage/Account";
+// import Log from "./components/login/Log";
+// import {SimpleSidebar} from "./pages/accountPage/Account";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <Mainroute />
-      {/* <Footer /> */}
+      <Footer />
    
-      {/* <Log/> */}
-      {/* <SimpleSidebar/> */}
-      
+    
     </div>
   );
 }
