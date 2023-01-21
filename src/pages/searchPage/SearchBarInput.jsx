@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-function SearchBarInput({ queryHandler }) {
+import SearchCard from "./SeacrhCard"
+function SearchBarInput({ queryHandler, suggestions }) {
   const [input, setInput] = useState("")
 
   const handleInputChange = (e) => {
@@ -9,11 +10,25 @@ function SearchBarInput({ queryHandler }) {
   useEffect(() => {
     queryHandler(input)
   }, [input, queryHandler])
+  const handleClick = (i) => {
+    console.log(i)
+  }
   return (
     <Wrapper>
       <SearchBarWrapper>
         <Input value={input} onChange={handleInputChange} />
       </SearchBarWrapper>
+      {suggestions.map((el, i) => {
+        return (
+          <SearchCard
+            id={el.id}
+            image={el.image}
+            title={el.title}
+            salePrice={el.salePrice}
+            discountPrice={el.discountPrice}
+          />
+        )
+      })}
     </Wrapper>
   )
 }

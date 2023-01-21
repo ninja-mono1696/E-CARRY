@@ -9,6 +9,7 @@ import Home from "../pages/homePage/Home"
 import ProductPage from "../pages/productPage/ProductPage"
 import SingleProductPage from "../pages/productPage/singleProductPage/SingleProductPage"
 import Search from "../pages/searchPage/Search"
+import SingleCard from "../pages/searchPage/SingleCard"
 
 const Mainroute = () => {
   return (
@@ -23,6 +24,7 @@ const Mainroute = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/admin/product" element={<Admin />} />
+        <Route path="/search/:id" element={<SingleCard />} />
       </Routes>
     </div>
   )
