@@ -1,3 +1,22 @@
 {
-  "posts": []
+  "products": [
+    {
+      "title": "Bags",
+      "image": "https://m.media-amazon.com/images/I/610fN3RyKFL._UY500_.jpg",
+      "salePrice": "1200",
+      "discountPrice": "700",
+      "category": "Shoes",
+      "color": "Green",
+      "id": 1
+    },
+    {
+      "title": "BAgs",
+      "image": "https://m.media-amazon.com/images/I/71LXSf7dHFL._SL1500_.jpg",
+      "salePrice": "123",
+      "discountPrice": "123",
+      "category": "Shoes",
+      "color": "Cyan",
+      "id": 2
+    }
+  ]
 }

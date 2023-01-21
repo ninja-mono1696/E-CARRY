@@ -9,6 +9,9 @@ import {
   Text,
   IconButton,
   Flex,
+  Alert,
+  AlertIcon,
+  AlertTitle,
 } from "@chakra-ui/react"
 import Sidebar from "./SideBar/SideBar"
 import { FiMenu } from "react-icons/fi"
@@ -34,6 +37,8 @@ const Admin = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post("http://localhost:8080/products", data)
+    setData(init)
+    alert("Product Added Successfully")
   }
   let { title, image, salePrice, discountPrice, category } = data
 
