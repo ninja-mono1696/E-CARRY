@@ -9,7 +9,7 @@ import Footer from './components/footer/Footer';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <Mainroute />
        <Footer />
        
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+// 
