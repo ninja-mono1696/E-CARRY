@@ -1,11 +1,14 @@
 import React from "react";
 import "./productCard.css";
 
+import { useDispatch, useSelector } from "react-redux";
+import { getsingleProduct } from "../../redux/appReducer/action";
+
 const ProductCard = ({ watches }) => {
   const styles = {
     border: "1px solid black",
   };
-
+  
   return (
     <div className="watches-container">
       {/* ProductCard */}
