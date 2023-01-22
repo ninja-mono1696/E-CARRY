@@ -18,6 +18,17 @@
       "category": ""
     }
   ],
+  "address": {
+    "FullName": "kavita",
+    "EmailAddress": "bsckavita@gmail.com",
+    "Pincode": "311001",
+    "City": "bilwara",
+    "State": "rajasthan",
+    "Countery": "",
+    "FlatNumber": "607",
+    "Area": "vsp",
+    "Landmark": "devstahli"
+  },
   "watches": [
     {
       "id": 2,
@@ -26,10 +37,9 @@
       "salePrice": "3499",
       "discountPrice": "1699",
       "category": "Braided",
-      "color":"Black",
-      "detail_url1":"https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-1.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
-      "detail_url2":"https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-2n.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1"
-
+      "color": "Black",
+      "detail_url1": "https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-1.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
+      "detail_url2": "https://images.dailyobjects.com/marche/product-images/1801/black-braided-solo-loop-apple-watchband-42-44mm-images/Black-Braided-Solo-Loop-Apple-WatchBand-2n.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1"
     },
     {
       "id": 3,
@@ -85,7 +95,6 @@
       "category": "Braided",
       "color": "Olive"
     },
-
     {
       "id": 9,
       "image": "https://images.dailyobjects.com/marche/product-images/1801/space-black-magnetic-milanese-loop-apple-watchband-42-44mm-images/Space-Black-Magnetic-Milanese-Loop-Apple-WatchBand-38-40-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",

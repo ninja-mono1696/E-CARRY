@@ -34,6 +34,20 @@ import {
   FormLabel,
 
 } from '@chakra-ui/react'
+import { postuserAddress } from "../../redux/appReducer/action";
+import { useState } from "react";
+
+const initAdress={
+  FullName:"",
+  EmailAddress :"",
+  Pincode : "",
+  City:"",
+  State :"",
+  Countery:"",
+  FlatNumber : "",
+  Area:"",
+  Landmark : "",
+}
 
 const Cart = () => {
 const navigate =useNavigate()
@@ -48,13 +62,21 @@ const navigate =useNavigate()
 const dispatch =useDispatch()
 // const ItemCount =useSelector((store)=>store.cartReducer.Count)
 const cartData =useSelector ((store)=> store.appReducer.cartData)
+const [userAddress,setUserAdress]=React.useState(initAdress)
 
 // console.log(ItemCount)
 
 
 
+const handleChange=(e)=>{
+  const val =  e.target.value;
+setUserAdress({...userAddress,[e.target.name]:e.target.value})
+}
+console.log(userAddress)
 
 const handleAddressANdCheckout=()=>{
+dispatch(postuserAddress(userAddress))
+console.log(userAddress)
 
   navigate("/checkout");
 }
@@ -66,7 +88,7 @@ const handleAddressANdCheckout=()=>{
     </div>
 
 <div style={{ display:'flex',marginTop:'50px', }}>
-  <div style={{width:'50%',display:'flex',flexDirection:'column' ,gap:'20px',overflow:'auto'}}>
+  <div style={{width:'50%',display:'flex',flexDirection:'column' ,gap:'20px'}}>
 {
   cartData.map((el)=>(
     <div style={{display:'flex'}}>
@@ -77,7 +99,7 @@ const handleAddressANdCheckout=()=>{
    
     <ButtonGroup variant='outline' >
   <Button colorScheme='blue' >-</Button>
-  <Button colorScheme='blue' isDisabled={true}></Button>
+  <Button colorScheme='blue' isDisabled={true}>{1}</Button>
   <Button colorScheme='blue'  >+</Button>
 </ButtonGroup>
 
@@ -152,8 +174,8 @@ const handleAddressANdCheckout=()=>{
         <Box flex='1' textAlign='left' color={'black'} fontWeight="bold" >
         ORDER SUMMARY
         <Box color={'black'} fontWeight="400">
-        <Box> Item Total (1 Item)<span style={{marginLeft:'385px'}}>Rs.1699</span></Box>
-        <Box>Shipping<span style={{marginLeft:'480px'}}>Free</span></Box>
+        <Box> Item Total (1 Item)<span style={{marginLeft:'430px'}}>Rs.1699</span></Box>
+        <Box>Shipping<span style={{marginLeft:'430px'}}>Free</span></Box>
         </Box>
         </Box>
      </AccordionButton>
@@ -165,17 +187,15 @@ const handleAddressANdCheckout=()=>{
       <AccordionButton>
         <Box flex='1' textAlign='left' color={'black'} fontWeight="bold" >
       
-        <Box color={'black'} fontWeight="400">
+        <Box color={'black'} fontWeight="390">
         <Box> Grand Total<span style={{marginLeft:'430px'}}>Rs.1699</span></Box>
-        <Box>(Inclusive of Taxes)<span style={{marginLeft:'305px'}}>You Saved Rs.300</span></Box>
+        <Box>(Inclusive of Taxes)<span style={{marginLeft:'251px'}}>You Saved Rs.300</span></Box>
         </Box>
         </Box>
      </AccordionButton>
     </h2>
     <Button onClick={onOpen} colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
-        {/* <Button ml={4} ref={finalRef}>
-          I'll receive focus on close
-        </Button> */}
+      
   
         <Modal
           initialFocusRef={initialRef}
@@ -190,30 +210,31 @@ const handleAddressANdCheckout=()=>{
             <ModalBody pb={6}>
               <FormControl>
                 
-                <Input variant='flushed' ref={initialRef} placeholder='Full name' />
+                <Input variant='flushed' name="FullName" ref={initialRef} placeholder='Full name' value={userAddress.FullName}
+                onChange={handleChange} />
               </FormControl>
   
               <FormControl mt={4}>
             
-                <Input variant='flushed' placeholder='Email Address' />
+                <Input variant='flushed'name="EmailAddress" placeholder='Email Address' value={userAddress.EmailAddress} onChange={handleChange}  />
               </FormControl>
               <FormControl mt={4} display='flex' gap={'10px'}>
               
-                <Input variant='flushed' placeholder='Pincode' />
+                <Input variant='flushed' name="Pincode" placeholder='Pincode' value={userAddress.Pincode} onChange={handleChange}  />
                
 
-                <Input variant='flushed' placeholder='City' />
-                <Input variant='flushed' placeholder='State' />
-                <Input variant='flushed' placeholder='Country' />
+                <Input variant='flushed' name="City" placeholder='City' value={userAddress.City} onChange={handleChange}  />
+                <Input variant='flushed' name="State" placeholder='State' value={userAddress.State} onChange={handleChange}  />
+                <Input variant='flushed' name="Countery" placeholder='Country'value={userAddress.Countery} onChange={handleChange}  />
               </FormControl>
               <FormControl mt={4}>
-              <Input variant='flushed' placeholder='Flat No/Building/ Street Name ' />
+              <Input variant='flushed' name="FlatNumber" placeholder='Flat No/Building/ Street Name ' value={userAddress.FlatNumber} onChange={handleChange} />
              </FormControl>
              <FormControl mt={4}> 
-             <Input variant='flushed' placeholder='Area/Locality' />
+             <Input variant='flushed' name="Area" placeholder='Area/Locality' value={userAddress.Area} onChange={handleChange} />
              </FormControl>
              <FormControl mt={4}> 
-             <Input variant='flushed' placeholder='Landmark' />
+             <Input variant='flushed' name="Landmark" placeholder='Landmark' value={userAddress.Landmark} onChange={handleChange} />
              </FormControl>
              <FormControl mt={4}> 
             <Text>PS. Your information is safe with us, No spam.</Text>
@@ -222,7 +243,7 @@ const handleAddressANdCheckout=()=>{
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme='blue' mr={3}   onClick={handleAddressANdCheckout}
+              <Button colorScheme='blue' mr={3}   onClick={handleAddressANdCheckout} isDisabled={userAddress.FullName==""||userAddress.Pincode==""}
               
               >
               ADD ADDRESS

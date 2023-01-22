@@ -1,10 +1,11 @@
 import { LoadData, savData } from "../../utils/accessLoaclStorage";
-import { GET_CART_DATA, GET_PRODUCT_ERROR, GET_PRODUCT_REQUEST, GET_PRODUCT_SUCCESS, GET_SINGLE_PRODUCT } from "./actionTypes";
+import { GET_CART_DATA, GET_PRODUCT_ERROR, GET_PRODUCT_REQUEST, GET_PRODUCT_SUCCESS, GET_SINGLE_PRODUCT, POST_ADDRESS } from "./actionTypes";
 
 const initialState ={
     watches:[],
     singleProduct:LoadData("singleProduct")||{},
-    cartData:LoadData("cartData")||[],
+    cartData:LoadData("cartData"),
+    userAddress : LoadData("userAddress")||{},
     isLoading:false,
     isError:false,
 }
@@ -22,6 +23,11 @@ export const reducer=(state=initialState,{type,payload})=>{
                 savData("cartData",[...state.cartData,payload])
 
         return {...state,isLoading:false,singleProduct:payload,cartData:[state.cartData,payload] };
+        case POST_ADDRESS:
+            savData("userAddress",payload)
+           
+
+    return {...state,isLoading:false,userAddress:payload};
                
         default:
             return state;        

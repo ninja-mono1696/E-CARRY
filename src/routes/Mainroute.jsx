@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Admin from "../pages/admin/Admin";
 import Cart from "../pages/cartPage/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
+import { Ordersucessful } from "../pages/checkoutPage/OrderSucessful";
+import Payment from "../pages/checkoutPage/Payment";
 import Home from "../pages/homePage/Home";
 import ProductPage from "../pages/productPage/ProductPage";
 import {SingleProductPage} from "../pages/productPage/singleProductPage/SingleProductPage";
@@ -21,6 +23,8 @@ const Mainroute = () => {
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/payment/" element={<Payment />} />
+        <Route path="/payment/os" element={<Ordersucessful />} />
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_CART_TOTAL_QUANTITY, GET_PRODUCT_ERROR, GET_PRODUCT_REQUEST, GET_PRODUCT_SUCCESS, GET_SINGLE_PRODUCT } from "./actionTypes"
+import { GET_ADDRESS, GET_CART_TOTAL_QUANTITY, GET_PRODUCT_ERROR, GET_PRODUCT_REQUEST, GET_PRODUCT_SUCCESS, GET_SINGLE_PRODUCT, POST_ADDRESS } from "./actionTypes"
 
 
 const getProdcutRequestAction=()=>{
@@ -28,9 +28,31 @@ export const getCarttotalQuantityAction=()=>{
   return {type :GET_CART_TOTAL_QUANTITY}
 }
 
- export const getWatches=()=>(dispatch)=>{
+export const postUserAddressAction=(payload)=>{
+  return {type :POST_ADDRESS, payload}
+}
+
+
+export const getUserAddressAction=()=>{
+  return {type :GET_ADDRESS}
+}
+
+ export const getFilterdWatches=(category)=>(dispatch)=>{
     dispatch(getProdcutRequestAction())
-    axios.get(` http://localhost:8080/watches`).then((res)=>{
+    // console.log(category,color)
+    axios.get(` http://localhost:8080/watches?category=${category}`).then((res)=>{
+      console.log(res.data)
+      dispatch(getProdcutSuccessAction(res.data))
+
+    }).catch((er)=>{
+        dispatch(getProdcutErrorAction())
+    })
+  }
+
+  export const getWatches=(order)=>(dispatch)=>{
+    dispatch(getProdcutRequestAction())
+    console.log(order)
+    axios.get(` http://localhost:8080/watches?_sort=discountPrice&_order=${order}`).then((res)=>{
       console.log(res.data)
       dispatch(getProdcutSuccessAction(res.data))
 
@@ -47,6 +69,29 @@ export const getCarttotalQuantityAction=()=>{
 
     }).catch((er)=>{
         dispatch(getProdcutErrorAction())
+    })
+  }
+
+  export const postuserAddress=(userAddress)=>(dispatch)=>{
+   
+    axios.post(` http://localhost:8080/address`,userAddress).then((res)=>{
+      console.log(res.data)
+      dispatch(postUserAddressAction(res.data))
+
+    }).catch((er)=>{
+      console.log(er)
+    })
+  }
+
+  
+  export const getuserAddress=()=>(dispatch)=>{
+    dispatch(postUserAddressAction())
+    axios.get(` http://localhost:8080/address`).then((res)=>{
+      // console.log(res.data)
+      dispatch(getUserAddressAction())
+
+    }).catch((er)=>{
+      console.log(er)
     })
   }
 
