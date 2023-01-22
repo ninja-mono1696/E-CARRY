@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import {Navigate, useNavigate} from 'react-router-dom'
 
+
 import { DeleteIcon} from '@chakra-ui/icons'
 import { Input ,InputGroup,InputRightElement ,Text} from '@chakra-ui/react'
 import {
@@ -49,6 +50,7 @@ const initAdress={
   Landmark : "",
 }
 
+
 const Cart = () => {
 const navigate =useNavigate()
 
@@ -67,6 +69,11 @@ const [userAddress,setUserAdress]=React.useState(initAdress)
 // console.log(ItemCount)
 
 
+
+const DeleteItem =(id)=>{
+  console.log(cartData)
+
+}
 
 const handleChange=(e)=>{
   const val =  e.target.value;
@@ -103,7 +110,7 @@ console.log(userAddress)
   <Button colorScheme='blue'  >+</Button>
 </ButtonGroup>
 
-<DeleteIcon style={{marginLeft:'250px'}} />
+<DeleteIcon style={{marginLeft:'250px'}}  onClick={()=>DeleteItem(el.id)}/>
 
 
     </div> 
