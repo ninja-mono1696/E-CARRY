@@ -1,8 +1,12 @@
 .footer {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  flex: 1 1 0%;
   color: rgb(0, 0, 0);
+  width: 100%;
+  height: auto;
+  background-color: rgb(247, 247, 247);
+  box-sizing: border-box;
 }
 
 .footer_container1 {

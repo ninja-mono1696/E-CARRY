@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
-import styled from "styled-components";
+import "./backToTop.css";
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -26,29 +25,19 @@ const BackToTop = () => {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <Button>
-      <FaArrowCircleUp
-        onClick={scrollToTop}
-        style={{ display: visible ? "inline" : "none" }}
-      />
-    </Button>
+    <button
+      className="back_btn"
+      onClick={scrollToTop}
+      style={{ display: visible ? "inline" : "none" }}>
+      <span className="back_item">
+        <img
+          src="https://images.dailyobjects.com/icons/right_arrow_black.png"
+          alt="backToTop"
+          className="back_img"
+        />
+      </span>
+    </button>
   );
 };
-
-const Button = styled.div`
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  right: 8%;
-  bottom: 62px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  place-content: center;
-  background: #fff;
-  border: 2px solid #20a87e;
-  box-sizing: border-box;
-  z-index: 5;
-`;
 
 export default BackToTop;
