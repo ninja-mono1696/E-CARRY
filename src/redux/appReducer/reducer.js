@@ -10,17 +10,17 @@ const initialState ={
     isError:false,
 }
 
-export const reducer=(state=initialState,{type,payload})=>{
-    switch(type){
-        case GET_PRODUCT_REQUEST:
-            return {...state,isLoading:true};
-        case GET_PRODUCT_SUCCESS:
-            return {...state,isLoading:false,watches:payload};   
-        case GET_PRODUCT_ERROR:
-            return {...state,isLoading:false,isError:true };
-            case GET_SINGLE_PRODUCT:
-                savData("singleProduct",payload)
-                savData("cartData",[...state.cartData,payload])
+export const reducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case GET_PRODUCT_REQUEST:
+      return { ...state, isLoading: true }
+    case GET_PRODUCT_SUCCESS:
+      return { ...state, isLoading: false, watches: payload }
+    case GET_PRODUCT_ERROR:
+      return { ...state, isLoading: false, isError: true }
+    case GET_SINGLE_PRODUCT:
+      savData("singleProduct", payload)
+      savData("cartData", [...state.cartData, payload])
 
         return {...state,isLoading:false,singleProduct:payload,cartData:[state.cartData,payload] };
         case POST_ADDRESS:

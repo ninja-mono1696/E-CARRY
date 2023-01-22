@@ -16,8 +16,8 @@ const Mainroute = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-        {/* <Route path="/account" element={<AccountPage />} /> */}
+        <Route path="/admin" element={<Analytics />} />
+        <Route path="/account" element={<AccountPage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/product/:id" element={<SingleProductPage />} />
@@ -27,7 +27,7 @@ const Mainroute = () => {
         <Route path="/payment/os" element={<Ordersucessful />} />
       </Routes>
     </div>
-  );
-};
+  )
+}
 
-export default Mainroute;
+export default Mainroute
