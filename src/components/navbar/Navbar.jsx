@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiCartAlt, BiSearchAlt } from "react-icons/bi";
-import { RiAccountPinCircleFill } from "react-icons/ri";
+import { RiAccountPinCircleFill, RiAdminFill } from "react-icons/ri";
 import Logo from "../../assets/logo.png";
 import "./navbar.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [activeNav, setActiveNav] = useState("/newArrivals");
+  const [activeNav, setActiveNav] = useState("/products");
 
   return (
     <header className="nav">
@@ -24,8 +24,8 @@ const Navbar = () => {
         <div className="nav_content">
           <ul className="nav_list">
             <li className="nav_item">
-              <Link
-                onClick={() => setActiveNav(navigate("/newArrivals"))}
+              <Link to="/products"
+                onClick={() => setActiveNav("/products")}
                 className={
                   activeNav === "/newArrivals"
                     ? "nav_link active_link"
@@ -118,9 +118,10 @@ const Navbar = () => {
         </div>
 
         <div className="nav_buttons">
-          <BiCartAlt style={{ fontSize: "24px", marginRight: "24px", cursor: "pointer" }} />
-          <RiAccountPinCircleFill style={{ fontSize: "24px", marginRight: "24px", cursor: "pointer" }} />
-          <BiSearchAlt style={{ fontSize: "24px", cursor: "pointer" }} />
+          <BiCartAlt style={{ fontSize: "24px", marginRight: "24px", cursor: "pointer" }} onClick={() => navigate("/cart")} />
+          <RiAccountPinCircleFill style={{ fontSize: "24px", marginRight: "24px", cursor: "pointer" }} onClick={() => navigate("/login")} />
+          <BiSearchAlt style={{ fontSize: "24px", marginRight: "24px", cursor: "pointer" }} onClick={() => navigate("/search")} />
+          <RiAdminFill style={{ fontSize: "24px", cursor: "pointer" }} onClick={() => navigate("/admin")} />
         </div>
       </div>
     </header>

@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import SearchCard from "./SearchCard"
-import { useThrottle } from "use-throttle"
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import SearchCard from "./SearchCard";
+import { useThrottle } from "use-throttle";
 function SearchBarInput({ queryHandler, suggestions }) {
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
 
-  const [activeOption, setActiveOption] = useState(0)
+  const [activeOption, setActiveOption] = useState(0);
   const handleInputChange = (e) => {
-    setInput(e.target.value)
-  }
+    setInput(e.target.value);
+  };
 
   const handleActiveSuggestions = (e) => {
-    console.log(e)
+    console.log(e);
     if (e.keyCode === 40) {
-      setActiveOption(activeOption + 1)
+      setActiveOption(activeOption + 1);
     } else if (e.keyCode === 38) {
-      setActiveOption(activeOption - 1)
+      setActiveOption(activeOption - 1);
     }
-  }
-  const throttleText = useThrottle(input, 1000)
+  };
+  const throttleText = useThrottle(input, 1000);
   useEffect(() => {
-    queryHandler(throttleText)
-  }, [throttleText, queryHandler])
+    queryHandler(throttleText);
+  }, [throttleText, queryHandler]);
   return (
     <Wrapper onKeyUp={(e) => handleActiveSuggestions(e)}>
       <SearchBarWrapper>
@@ -40,14 +40,14 @@ function SearchBarInput({ queryHandler, suggestions }) {
               activeOption={activeOption}
               setActiveOption={setActiveOption}
             />
-          )
+          );
         })}
       </New>
     </Wrapper>
-  )
+  );
 }
 
-export default SearchBarInput
+export default SearchBarInput;
 
 const New = styled.div`
   border: 1px solid black;
@@ -59,7 +59,7 @@ const New = styled.div`
     background: #aecabe;
     cursor: pointer;
   }
-`
+`;
 
 const Input = styled.input`
   flex: 1;
@@ -67,12 +67,12 @@ const Input = styled.input`
   border: none;
   outline: none;
   width: 1150px;
-`
+`;
 const Wrapper = styled.div`
   max-width: 1200px;
   margin: auto;
-`
+`;
 const SearchBarWrapper = styled.div`
   display: flex;
   max-width: 1200px;
-`
+`;

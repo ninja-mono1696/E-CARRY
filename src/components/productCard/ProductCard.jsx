@@ -6,22 +6,19 @@ import { getsingleProduct } from "../../redux/appReducer/action";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ watches }) => {
-  const styles = {
+  const styles = {};
 
-  };
-  
-  
   return (
     <div className="watches-container">
       {/* ProductCard */}
 
       {watches.map((el) => {
         return (
-          <div style={styles} >
-          <Link to={`/product/${el.id}`}>
-            <div style={{ backgroundColor: "whitesmoke", height: "60%" }}>
-              <img src={el.image} width="100%" />
-            </div>
+          <div style={styles}>
+            <Link to={`/product/${el.id}`}>
+              <div style={{ backgroundColor: "whitesmoke", height: "60%" }}>
+                <img src={el.image} width="100%" />
+              </div>
             </Link>
             <div>
               <p>{el.title}</p>
@@ -33,15 +30,11 @@ const ProductCard = ({ watches }) => {
                 </h4>
               </div>
 
-              <h5 style={{ color: "red" }}>
-                BUY ANY 3 @ 2499 ONLY
-              </h5>
+              <h5 style={{ color: "red" }}>BUY ANY 3 @ 2499 ONLY</h5>
             </div>
           </div>
-        
         );
       })}
-
     </div>
   );
 };
