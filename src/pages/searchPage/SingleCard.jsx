@@ -35,7 +35,7 @@ function SingleCard() {
               {" "}
               Rs.{watch.discountPrice}
             </Text>
-            <Text fontWeight="medium"> Inclusive of all taxes</Text>
+            <Text fontWeight="light"> Inclusive of all taxes</Text>
             <p>Extra 10% cashback upto INR 500 with zest-updated.png</p>
           </p>
 
