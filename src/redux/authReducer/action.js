@@ -1,4 +1,8 @@
-import { USER_LOGIN_FAILURE, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS } from "./actionTypes"
+import {
+  USER_LOGIN_FAILURE,
+  USER_LOGIN_REQUEST,
+  USER_LOGIN_SUCCESS,
+} from "./actionTypes";
 
 export const loginRequestAction=()=>{
     return {type:USER_LOGIN_REQUEST}

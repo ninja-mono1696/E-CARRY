@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react"
 import SearchBarInput from "./SearchBarInput"
-import { watches } from "./utils/products"
+import { products } from "./utils/products"
 const Search = () => {
   const [query, setQuery] = useState("")
   const [suggestions, setSuggestions] = useState([])
@@ -13,24 +13,20 @@ const Search = () => {
       setSuggestions([])
     } else {
       let textquery = query.trim().toLowerCase()
-      let newSuggestions = watches.filter((item) => {
-        return item.title.toLowerCase().indexOf(textquery) !== -1 ? true : false
-      })
-      setSuggestions(newSuggestions)
+      let newSuggestions = products
+        .filter((item) => {
+          return item.title.toLowerCase().indexOf(textquery) !== -1
+            ? true
+            : false
+        })
+        .map((el) => el.title)
+      console.log(newSuggestions)
     }
   }, [query])
   return (
     <div>
-      <h3
-        style={{
-          marginLeft: "170px",
-          color: "darkgreen",
-          fontWeight: "normal",
-        }}
-      >
-        Search
-      </h3>
-      <SearchBarInput queryHandler={queryHandler} suggestions={suggestions} />
+      <h3>Search Query: {query}</h3>
+      <SearchBarInput queryHandler={queryHandler} />
     </div>
   )
 }
