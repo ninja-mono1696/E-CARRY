@@ -1,20 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
 
-import { Link, useSearchParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function SearchCard({ id, title, index, setActiveOption }) {
+  const navigate = useNavigate()
+  const handleClick = (id) => {
+    navigate(`/search/${id}`)
+  }
   return (
-    <div>
-      <Link to={`/search/${id}`}>
-        <div
-          onMouseOver={() => setActiveOption(index + 1)}
-          style={{
-            padding: "10px",
-          }}
-        >
-          {title}
-        </div>
-      </Link>
+    <div
+      onClick={() => handleClick(id)}
+      onMouseOver={() => setActiveOption(index + 1)}
+      style={{
+        padding: "15px",
+      }}
+    >
+      {title}
     </div>
   )
 }

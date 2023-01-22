@@ -3,16 +3,25 @@ import styled from "styled-components"
 import SearchCard from "./SearchCard"
 function SearchBarInput({ queryHandler, suggestions }) {
   const [input, setInput] = useState("")
-  const [status, setStatus] = useState(false)
+
   const [activeOption, setActiveOption] = useState(0)
   const handleInputChange = (e) => {
     setInput(e.target.value)
+  }
+
+  const handleActiveSuggestions = (e) => {
+    console.log(e)
+    if (e.keyCode === 40) {
+      setActiveOption(activeOption + 1)
+    } else if (e.keyCode === 38) {
+      setActiveOption(activeOption - 1)
+    }
   }
   useEffect(() => {
     queryHandler(input)
   }, [input, queryHandler])
   return (
-    <Wrapper>
+    <Wrapper onKeyUp={(e) => handleActiveSuggestions(e)}>
       <SearchBarWrapper>
         <Input value={input} onChange={handleInputChange} />
       </SearchBarWrapper>
