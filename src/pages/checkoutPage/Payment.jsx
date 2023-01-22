@@ -38,6 +38,7 @@ import {
 
 import { getuserAddress, postuserAddress } from "../../redux/appReducer/action";
 import { useEffect } from "react";
+import { useState } from "react";
 
 // const initAdress={
 //   FullName:"",
@@ -51,9 +52,9 @@ import { useEffect } from "react";
 //   Landmark : "",
 // }
 
-const Checkout = () => {
+const Payment = () => {
 
-
+const[upiId,setUpiId]=useState("")
 
 
 const navigate =useNavigate()
@@ -70,20 +71,16 @@ const userAddress =useSelector ((store)=> store.appReducer.userAddress)
 
 // console.log(ItemCount)
 
+const styles={color:'green', textDecoration:'underline' ,cursor:'pointer'}
 
 
-
-// const handleChange=(e)=>{
-
-//   setUserAdress({...userAddress,[e.target.name]:[e.target.value]})
-// }
 console.log(userAddress)
 
-const handllePayment=()=>{
+const handleAddressANdCheckout=()=>{
+dispatch(postuserAddress(userAddress))
+console.log(userAddress)
 
-
-
-  navigate("/payment");
+  navigate("/checkout");
 }
   return <div style={{marginBottom:'20%'}}>
     <div style={{ display:'flex', justifyContent:'center',alignItems:'center', backgroundColor:'white',
@@ -95,13 +92,14 @@ const handllePayment=()=>{
 <div style={{ display:'flex' }}>
   <div style={{width:'50%',display:'flex',flexDirection:'column' ,gap:'20px',overflow:'auto',borderRight:'2px solid whitesmoke'}}>
 
-<div style={{ margin:"auto",backgroundColor:'whitesmoke', width:'70%'}}>
-  <Text fontWeight='bold'>PAYMENT METHOD</Text>
-  <Text>{userAddress.FullName}</Text>
-  <Text>{userAddress.FlatNumber}{","}{userAddress.Area}</Text>
-  <Text>{userAddress.Landmark}</Text>
-  <Text>{userAddress.City}{","} {userAddress.State}</Text>
-  <Text>{userAddress.Pincode}</Text>
+<div style={{ margin:"auto",backgroundColor:'whitesmoke', width:'70%',display:'flex' ,flexDirection:'column', gap:'20px',}}>
+<Text fontWeight='bold'>PAYMENT METHOD</Text>
+<Text onClick={onOpen} style={styles}>UPI </Text>
+  <Text  style={styles}>Dabit/Credit Card</Text>
+ 
+  <Text style={styles}>Paytm</Text>
+  <Text  style={styles}>Phone pay</Text>
+  <Text style={styles}>Net Banking</Text>
 </div>
   </div>
 
@@ -137,12 +135,10 @@ const handllePayment=()=>{
         </Box>
      </AccordionButton>
     </h2>
-    <Button onClick={handllePayment} colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
-        {/* <Button ml={4} ref={finalRef}>
-          I'll receive focus on close
-        </Button> */}
+    <Button colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
+       
   
-        {/* <Modal
+         <Modal
           initialFocusRef={initialRef}
           finalFocusRef={finalRef}
           isOpen={isOpen}
@@ -150,55 +146,33 @@ const handllePayment=()=>{
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>ADD NEW ADDRESS</ModalHeader>
+            <ModalHeader>ADD UPI DETAILS</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
               <FormControl>
-                
-                <Input variant='flushed' name="FullName" ref={initialRef} placeholder='Full name' value={userAddress.FullName}
-                onChange={handleChange} />
+              <FormLabel color='red'>UPI</FormLabel>
+                <Input focusBorderColor='red' variant='flushed' name="UPI_ID" ref={initialRef} placeholder='UPI ID' value={upiId}
+                onChange={(e)=>setUpiId(e.target.value)} />
               </FormControl>
   
-              <FormControl mt={4}>
-            
-                <Input variant='flushed'name="EmailAddress" placeholder='Email Address' value={userAddress.EmailAddress} onChange={handleChange}  />
-              </FormControl>
-              <FormControl mt={4} display='flex' gap={'10px'}>
-              
-                <Input variant='flushed' name="Pincode" placeholder='Pincode' value={userAddress.Pincode} onChange={handleChange}  />
+
+
                
-
-                <Input variant='flushed' name="City" placeholder='City' value={userAddress.City} onChange={handleChange}  />
-                <Input variant='flushed' name="State" placeholder='State' value={userAddress.State}  onChange={handleChange} />
-                <Input variant='flushed' name="Countery" placeholder='Country'value={userAddress.Countery} onChange={handleChange}  />
-              </FormControl>
-              <FormControl mt={4}>
-              <Input variant='flushed' name="FlatNumber" placeholder='Flat No/Building/ Street Name ' value={userAddress.FlatNumber} onChange={handleChange} />
-             </FormControl>
-             <FormControl mt={4}> 
-             <Input variant='flushed' name="Area" placeholder='Area/Locality' value={userAddress.Area} onChange={handleChange} />
-             </FormControl>
-             <FormControl mt={4}> 
-             <Input variant='flushed' name="Landmark" placeholder='Landmark' value={userAddress.Landmark} onChange={handleChange} />
-             </FormControl>
-             <FormControl mt={4}> 
-            <Text>PS. Your information is safe with us, No spam.</Text>
-             </FormControl>
-
             </ModalBody>
   
             <ModalFooter>
-              <Button colorScheme='blue' mr={3}   onClick={handleAddressANdCheckout}
-              
+              <Button colorScheme='green'  width="100%"  
+              as ='a'
+              href='/payment/os'
               >
-              ADD ADDRESS
+             CONTINUE
               </Button>
-              {/* <Button >Cancel</Button> */}
-            {/* </ModalFooter> */}
-          {/* </ModalContent> */}
-        {/* </Modal> */} *
+          
+            </ModalFooter>
+          </ModalContent>
+        </Modal> 
 
-    {/* <Button ></Button> */}
+ 
     </AccordionItem>
 
 </Accordion>
@@ -214,4 +188,4 @@ const handllePayment=()=>{
 
 
 
-export default Checkout;
+export default Payment;

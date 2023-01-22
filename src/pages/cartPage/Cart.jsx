@@ -1,7 +1,8 @@
 import React from "react";
-import { Heading } from '@chakra-ui/react'
+import { Heading, useDisclosure } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, ButtonGroup } from '@chakra-ui/react'
+import {Navigate, useNavigate} from 'react-router-dom'
 
 import { DeleteIcon} from '@chakra-ui/icons'
 import { Input ,InputGroup,InputRightElement ,Text} from '@chakra-ui/react'
@@ -21,14 +22,64 @@ import {
   UnorderedList,
 } from '@chakra-ui/react'
 
-const Cart = () => {
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  FormControl,
+  FormLabel,
 
+} from '@chakra-ui/react'
+import { postuserAddress } from "../../redux/appReducer/action";
+import { useState } from "react";
+
+const initAdress={
+  FullName:"",
+  EmailAddress :"",
+  Pincode : "",
+  City:"",
+  State :"",
+  Countery:"",
+  FlatNumber : "",
+  Area:"",
+  Landmark : "",
+}
+
+const Cart = () => {
+const navigate =useNavigate()
+
+
+  // function InitialFocus() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+  
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
+  
 const dispatch =useDispatch()
 // const ItemCount =useSelector((store)=>store.cartReducer.Count)
 const cartData =useSelector ((store)=> store.appReducer.cartData)
+const [userAddress,setUserAdress]=React.useState(initAdress)
 
 // console.log(ItemCount)
 
+
+
+const handleChange=(e)=>{
+  const val =  e.target.value;
+setUserAdress({...userAddress,[e.target.name]:e.target.value})
+}
+console.log(userAddress)
+
+const handleAddressANdCheckout=()=>{
+dispatch(postuserAddress(userAddress))
+console.log(userAddress)
+
+  navigate("/checkout");
+}
   return <div>
     <div style={{ display:'flex', justifyContent:'center',alignItems:'center', backgroundColor:'white',
     width:'100%',height:'100px', top:'0px',boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'}}>
@@ -37,7 +88,7 @@ const cartData =useSelector ((store)=> store.appReducer.cartData)
     </div>
 
 <div style={{ display:'flex',marginTop:'50px', }}>
-  <div style={{width:'50%',display:'flex',flexDirection:'column' ,gap:'20px',overflow:'auto'}}>
+  <div style={{width:'50%',display:'flex',flexDirection:'column' ,gap:'20px'}}>
 {
   cartData.map((el)=>(
     <div style={{display:'flex'}}>
@@ -48,7 +99,7 @@ const cartData =useSelector ((store)=> store.appReducer.cartData)
    
     <ButtonGroup variant='outline' >
   <Button colorScheme='blue' >-</Button>
-  <Button colorScheme='blue' isDisabled={true}></Button>
+  <Button colorScheme='blue' isDisabled={true}>{1}</Button>
   <Button colorScheme='blue'  >+</Button>
 </ButtonGroup>
 
@@ -123,8 +174,8 @@ const cartData =useSelector ((store)=> store.appReducer.cartData)
         <Box flex='1' textAlign='left' color={'black'} fontWeight="bold" >
         ORDER SUMMARY
         <Box color={'black'} fontWeight="400">
-        <Box> Item Total (1 Item)<span style={{marginLeft:'385px'}}>Rs.1699</span></Box>
-        <Box>Shipping<span style={{marginLeft:'480px'}}>Free</span></Box>
+        <Box> Item Total (1 Item)<span style={{marginLeft:'430px'}}>Rs.1699</span></Box>
+        <Box>Shipping<span style={{marginLeft:'430px'}}>Free</span></Box>
         </Box>
         </Box>
      </AccordionButton>
@@ -136,14 +187,73 @@ const cartData =useSelector ((store)=> store.appReducer.cartData)
       <AccordionButton>
         <Box flex='1' textAlign='left' color={'black'} fontWeight="bold" >
       
-        <Box color={'black'} fontWeight="400">
+        <Box color={'black'} fontWeight="390">
         <Box> Grand Total<span style={{marginLeft:'430px'}}>Rs.1699</span></Box>
-        <Box>(Inclusive of Taxes)<span style={{marginLeft:'305px'}}>You Saved Rs.300</span></Box>
+        <Box>(Inclusive of Taxes)<span style={{marginLeft:'251px'}}>You Saved Rs.300</span></Box>
         </Box>
         </Box>
      </AccordionButton>
     </h2>
-    <Button colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
+    <Button onClick={onOpen} colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
+      
+  
+        <Modal
+          initialFocusRef={initialRef}
+          finalFocusRef={finalRef}
+          isOpen={isOpen}
+          onClose={onClose}
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>ADD NEW ADDRESS</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody pb={6}>
+              <FormControl>
+                
+                <Input variant='flushed' name="FullName" ref={initialRef} placeholder='Full name' value={userAddress.FullName}
+                onChange={handleChange} />
+              </FormControl>
+  
+              <FormControl mt={4}>
+            
+                <Input variant='flushed'name="EmailAddress" placeholder='Email Address' value={userAddress.EmailAddress} onChange={handleChange}  />
+              </FormControl>
+              <FormControl mt={4} display='flex' gap={'10px'}>
+              
+                <Input variant='flushed' name="Pincode" placeholder='Pincode' value={userAddress.Pincode} onChange={handleChange}  />
+               
+
+                <Input variant='flushed' name="City" placeholder='City' value={userAddress.City} onChange={handleChange}  />
+                <Input variant='flushed' name="State" placeholder='State' value={userAddress.State} onChange={handleChange}  />
+                <Input variant='flushed' name="Countery" placeholder='Country'value={userAddress.Countery} onChange={handleChange}  />
+              </FormControl>
+              <FormControl mt={4}>
+              <Input variant='flushed' name="FlatNumber" placeholder='Flat No/Building/ Street Name ' value={userAddress.FlatNumber} onChange={handleChange} />
+             </FormControl>
+             <FormControl mt={4}> 
+             <Input variant='flushed' name="Area" placeholder='Area/Locality' value={userAddress.Area} onChange={handleChange} />
+             </FormControl>
+             <FormControl mt={4}> 
+             <Input variant='flushed' name="Landmark" placeholder='Landmark' value={userAddress.Landmark} onChange={handleChange} />
+             </FormControl>
+             <FormControl mt={4}> 
+            <Text>PS. Your information is safe with us, No spam.</Text>
+             </FormControl>
+
+            </ModalBody>
+  
+            <ModalFooter>
+              <Button colorScheme='blue' mr={3}   onClick={handleAddressANdCheckout} isDisabled={userAddress.FullName==""||userAddress.Pincode==""}
+              
+              >
+              ADD ADDRESS
+              </Button>
+              {/* <Button >Cancel</Button> */}
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+    {/* <Button ></Button> */}
     </AccordionItem>
 
 </Accordion>

@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Button, ButtonGroup,Heading } from '@chakra-ui/react'
 import { Navigate } from 'react-router-dom'
+import { useParams } from "react-router-dom";
+import { getsingleProduct } from '../../../redux/appReducer/action';
 
 export const SingleProductPage = () => {
   const [isCart,setIsCart]=useState(false)
   const[count,setCount]=useState(0)
+  const { id } = useParams();
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getsingleProduct(id))
+  }, [id]);
 
   const singleProduct = useSelector((store)=>(store.appReducer.singleProduct))
   console.log(singleProduct)
@@ -32,13 +39,14 @@ export const SingleProductPage = () => {
 
 </div>
 <div style={{width:'40%',height:'500px' ,display:'flex',flexDirection:'column',justifyContent:'space-evenly' ,margin :'auto'}}>
-  <p>{singleProduct.title}</p>
-  <p>Rs. <span>{singleProduct.discountPrice}</span> <span>{singleProduct.salePrice} Inclusive of all taxes</span></p>
+  <Heading size='lg'>{singleProduct.title}</Heading>
+  <p>Rs. <span>{singleProduct.discountPrice}</span> <span style={{textDecoration:'line-through',marginLeft:"5px",marginRight:"5px"}}>{singleProduct.salePrice} </span><span>Inclusive of all taxes</span>
+  </p>
    <p>
 Extra 10% cashback upto INR 500 with
-zest-updated.png</p>
+zest</p>
 
-<h3>Color</h3>
+{/* <h3>Color</h3> */}
 <hr></hr>
 
 <div>

@@ -18,6 +18,17 @@
       "category": ""
     }
   ],
+  "address": {
+    "FullName": "kavita",
+    "EmailAddress": "bsckavita@gmail.com",
+    "Pincode": "311001",
+    "City": "bilwara",
+    "State": "rajasthan",
+    "Countery": "",
+    "FlatNumber": "607",
+    "Area": "vsp",
+    "Landmark": "devstahli"
+  },
   "watches": [
     {
       "id": 2,
@@ -84,7 +95,6 @@
       "category": "Braided",
       "color": "Olive"
     },
-
     {
       "id": 9,
       "image": "https://images.dailyobjects.com/marche/product-images/1801/space-black-magnetic-milanese-loop-apple-watchband-42-44mm-images/Space-Black-Magnetic-Milanese-Loop-Apple-WatchBand-38-40-vw.png?tr=cm-pad_resize,v-2,w-759,h-648,dpr-1",
