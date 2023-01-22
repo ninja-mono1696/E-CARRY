@@ -4,5 +4,6 @@
   grid-template-rows: repeat(6,500px);
   width: 70%;
   margin-left: 10%;
+  gap:10px
 
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import { Heading } from '@chakra-ui/react'
+import { Heading, useDisclosure } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, ButtonGroup } from '@chakra-ui/react'
+import {Navigate, useNavigate} from 'react-router-dom'
 
 import { DeleteIcon} from '@chakra-ui/icons'
 import { Input ,InputGroup,InputRightElement ,Text} from '@chakra-ui/react'
@@ -21,14 +22,42 @@ import {
   UnorderedList,
 } from '@chakra-ui/react'
 
-const Cart = () => {
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  FormControl,
+  FormLabel,
 
+} from '@chakra-ui/react'
+
+const Cart = () => {
+const navigate =useNavigate()
+
+
+  // function InitialFocus() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+  
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
+  
 const dispatch =useDispatch()
 // const ItemCount =useSelector((store)=>store.cartReducer.Count)
 const cartData =useSelector ((store)=> store.appReducer.cartData)
 
 // console.log(ItemCount)
 
+
+
+
+const handleAddressANdCheckout=()=>{
+
+  navigate("/checkout");
+}
   return <div>
     <div style={{ display:'flex', justifyContent:'center',alignItems:'center', backgroundColor:'white',
     width:'100%',height:'100px', top:'0px',boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'}}>
@@ -143,7 +172,67 @@ const cartData =useSelector ((store)=> store.appReducer.cartData)
         </Box>
      </AccordionButton>
     </h2>
-    <Button colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
+    <Button onClick={onOpen} colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
+        {/* <Button ml={4} ref={finalRef}>
+          I'll receive focus on close
+        </Button> */}
+  
+        <Modal
+          initialFocusRef={initialRef}
+          finalFocusRef={finalRef}
+          isOpen={isOpen}
+          onClose={onClose}
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>ADD NEW ADDRESS</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody pb={6}>
+              <FormControl>
+                
+                <Input variant='flushed' ref={initialRef} placeholder='Full name' />
+              </FormControl>
+  
+              <FormControl mt={4}>
+            
+                <Input variant='flushed' placeholder='Email Address' />
+              </FormControl>
+              <FormControl mt={4} display='flex' gap={'10px'}>
+              
+                <Input variant='flushed' placeholder='Pincode' />
+               
+
+                <Input variant='flushed' placeholder='City' />
+                <Input variant='flushed' placeholder='State' />
+                <Input variant='flushed' placeholder='Country' />
+              </FormControl>
+              <FormControl mt={4}>
+              <Input variant='flushed' placeholder='Flat No/Building/ Street Name ' />
+             </FormControl>
+             <FormControl mt={4}> 
+             <Input variant='flushed' placeholder='Area/Locality' />
+             </FormControl>
+             <FormControl mt={4}> 
+             <Input variant='flushed' placeholder='Landmark' />
+             </FormControl>
+             <FormControl mt={4}> 
+            <Text>PS. Your information is safe with us, No spam.</Text>
+             </FormControl>
+
+            </ModalBody>
+  
+            <ModalFooter>
+              <Button colorScheme='blue' mr={3}   onClick={handleAddressANdCheckout}
+              
+              >
+              ADD ADDRESS
+              </Button>
+              {/* <Button >Cancel</Button> */}
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+
+    {/* <Button ></Button> */}
     </AccordionItem>
 
 </Accordion>

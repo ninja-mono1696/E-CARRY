@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Navigate } from 'react-router-dom'
+import { useParams } from "react-router-dom";
+import { getsingleProduct } from '../../../redux/appReducer/action';
 
 export const SingleProductPage = () => {
   const [isCart,setIsCart]=useState(false)
   const[count,setCount]=useState(0)
+  const { id } = useParams();
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getsingleProduct(id))
+  }, [id]);
 
   const singleProduct = useSelector((store)=>(store.appReducer.singleProduct))
   console.log(singleProduct)

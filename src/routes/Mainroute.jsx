@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AccountPage from "../pages/accountPage/AccountPage";
+// import AccountPage from "../pages/accountPage/AccountPage";
 import Admin from "../pages/admin/Admin";
 import Cart from "../pages/cartPage/Cart";
 import Checkout from "../pages/checkoutPage/Checkout";
@@ -15,7 +15,7 @@ const Mainroute = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/account" element={<AccountPage />} />
+        {/* <Route path="/account" element={<AccountPage />} /> */}
         <Route path="/search" element={<Search />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/product/:id" element={<SingleProductPage />} />

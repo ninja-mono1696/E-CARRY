@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getWatches } from "../../redux/appReducer/action";
  
  const ProductPage = () => {
-// const[watches,setWatches]=useState([])
+
 const dispatch =useDispatch()
 const watches = useSelector((store)=>store.appReducer.watches)
 
@@ -17,7 +17,7 @@ useEffect(()=>{
 dispatch(getWatches())
 },[])
 
-console.log(watches)
+
 
   return <div>
     <ProductCardTopBar/>
