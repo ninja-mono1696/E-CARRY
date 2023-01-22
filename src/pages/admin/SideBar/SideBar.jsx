@@ -18,7 +18,6 @@ import {
   FiShoppingCart,
 } from "react-icons/fi"
 import NavItem from "./NavItem"
-import { Link as LinkRoute } from "react-router-dom"
 export default function Sidebar() {
   const [navSize, changeNavSize] = useState("large")
   return (
