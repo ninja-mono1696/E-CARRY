@@ -1,22 +1,22 @@
-import React, { Component } from "react"
-import Card from "../Card/Card"
-import Chart from "react-apexcharts"
-import { barChartData, barChartOptions } from "../variables/charts"
+import React, { Component } from "react";
+import Card from "../Card/Card";
+import Chart from "react-apexcharts";
+import { barChartData, barChartOptions } from "../variables/charts";
 
 class BarChart extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       chartData: [],
       chartOptions: {},
-    }
+    };
   }
 
   componentDidMount() {
     this.setState({
       chartData: barChartData,
       chartOptions: barChartOptions,
-    })
+    });
   }
 
   render() {
@@ -26,8 +26,7 @@ class BarChart extends Component {
         height={{ sm: "300px" }}
         width="100%"
         bg="#20A87E"
-        position="relative"
-      >
+        position="relative">
         <Chart
           options={this.state.chartOptions}
           series={this.state.chartData}
@@ -36,8 +35,8 @@ class BarChart extends Component {
           height="100%"
         />
       </Card>
-    )
+    );
   }
 }
 
-export default BarChart
+export default BarChart;

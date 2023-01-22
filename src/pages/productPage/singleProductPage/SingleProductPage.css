@@ -1,17 +1,17 @@
 .pre {
-    left:1%
-  }
-  
-  .next{
-    right:50%;
-  }
-  .button {
-    margin-top:18%;
-    position:fixed;
+  left: 1%;
+}
 
-   color:gray;
-   background-color: white;
-   border-radius: 50%;
-padding: 0px 10px 0px 10px;
-    font-size: 25px;
-  }
+.next {
+  right: 50%;
+}
+.button {
+  margin-top: 18%;
+  position: fixed;
+
+  color: gray;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0px 10px 0px 10px;
+  font-size: 25px;
+}
