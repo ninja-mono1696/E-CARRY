@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import SearchCard from "./SearchCard"
+import { useThrottle } from "use-throttle"
 function SearchBarInput({ queryHandler, suggestions }) {
   const [input, setInput] = useState("")
 
@@ -17,9 +18,10 @@ function SearchBarInput({ queryHandler, suggestions }) {
       setActiveOption(activeOption - 1)
     }
   }
+  const throttleText = useThrottle(input, 1000)
   useEffect(() => {
-    queryHandler(input)
-  }, [input, queryHandler])
+    queryHandler(throttleText)
+  }, [throttleText, queryHandler])
   return (
     <Wrapper onKeyUp={(e) => handleActiveSuggestions(e)}>
       <SearchBarWrapper>
@@ -53,7 +55,6 @@ const New = styled.div`
   overflow: auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-
   & :nth-child(${({ active }) => active}) {
     background: #aecabe;
     cursor: pointer;
@@ -72,5 +73,6 @@ const Wrapper = styled.div`
   margin: auto;
 `
 const SearchBarWrapper = styled.div`
+  display: flex;
   max-width: 1200px;
 `
