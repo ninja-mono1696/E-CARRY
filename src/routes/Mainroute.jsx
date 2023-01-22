@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import AccountPage from "../pages/accountPage/AccountPage"
