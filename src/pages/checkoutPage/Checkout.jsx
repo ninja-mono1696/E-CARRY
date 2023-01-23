@@ -106,7 +106,7 @@ const Checkout = () => {
               backgroundColor: "whitesmoke",
               width: "70%",
             }}>
-            <Text fontWeight="bold">PAYMENT METHOD</Text>
+            <Text fontWeight="bold">SHIPPING ADDRESS</Text>
             <Text>{userAddress.FullName}</Text>
             <Text>
               {userAddress.FlatNumber}
