@@ -52,6 +52,8 @@ const initAdress={
 
 
 const Cart = () => {
+
+
 const navigate =useNavigate()
 
 
@@ -82,10 +84,12 @@ setUserAdress({...userAddress,[e.target.name]:e.target.value})
 console.log(userAddress)
 
 const handleAddressANdCheckout=()=>{
-dispatch(postuserAddress(userAddress))
-console.log(userAddress)
-
+dispatch(postuserAddress(userAddress)).then(()=>{
   navigate("/checkout");
+})
+
+
+ 
 }
   return <div>
     <div style={{ display:'flex', justifyContent:'center',alignItems:'center', backgroundColor:'white',
@@ -201,7 +205,7 @@ console.log(userAddress)
         </Box>
      </AccordionButton>
     </h2>
-    <Button onClick={onOpen} colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
+    <Button onClick={!userAddress&&onOpen} colorScheme='green' width="95%"height={'50px'} marginLeft='20px' borderRadius={'0px'}>Checkout</Button>
       
   
         <Modal

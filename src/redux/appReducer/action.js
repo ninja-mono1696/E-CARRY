@@ -65,7 +65,7 @@ export const getsingleProduct = (id) => (dispatch) => {
 
   export const postuserAddress=(userAddress)=>(dispatch)=>{
    
-    axios.post(` http://localhost:8080/address`,userAddress).then((res)=>{
+   return axios.post(` http://localhost:8080/address`,userAddress).then((res)=>{
       console.log(res.data)
       dispatch(postUserAddressAction(res.data))
 
