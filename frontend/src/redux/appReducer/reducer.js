@@ -11,7 +11,7 @@ import {
 const initialState = {
   watches: [],
   singleProduct: LoadData("singleProduct") || {},
-  cartData: LoadData("cartData"),
+  cartData: [] || LoadData("cartData"),
   userAddress: LoadData("userAddress") || {},
   isLoading: false,
   isError: false,

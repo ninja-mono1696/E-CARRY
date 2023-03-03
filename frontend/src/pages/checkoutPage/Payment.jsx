@@ -217,8 +217,7 @@ const Payment = () => {
                     <Button
                       colorScheme="green"
                       width="100%"
-                      as="a"
-                      href="/payment/os">
+                      onClick={() => navigate("/payment/os")}>
                       CONTINUE
                     </Button>
                   </ModalFooter>

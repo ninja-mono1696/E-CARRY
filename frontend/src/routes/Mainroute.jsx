@@ -1,6 +1,7 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 import Login from "../components/login/Log"
+import SimpleSidebar from "../pages/accountPage/Account"
 import Admin from "../pages/admin/Admin"
 import Analytics from "../pages/admin/Analytics"
 import Cart from "../pages/cartPage/Cart"
@@ -29,6 +30,7 @@ const Mainroute = () => {
         <Route path="/payment/os" element={<Ordersucessful />} />
         <Route path="/admin/product" element={<Admin />} />
         <Route path="/search/:id" element={<SingleCard />} />
+        <Route path="/simpleside" element={<SimpleSidebar />} />
       </Routes>
     </div>
   )
