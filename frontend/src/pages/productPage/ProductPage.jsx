@@ -1,54 +1,39 @@
-import React, { useState } from "react";
-
-import ProductCard from "../../components/productCard/ProductCard";
-import { ProductCardTopBar } from "../../components/productCard/ProductCardTopBar";
-import { ProductCardSideBar } from "../../components/productCard/productCardSideBar";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getFilterdWatches, getWatches } from "../../redux/appReducer/action";
-import { useSearchParams } from "react-router-dom";
-
+import React, { useState } from "react"
+import ProductCard from "../../components/productCard/ProductCard"
+import { ProductCardTopBar } from "../../components/productCard/ProductCardTopBar"
+import { ProductCardSideBar } from "../../components/productCard/productCardSideBar"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getFilterdWatches, getWatches } from "../../redux/appReducer/action"
+import { useSearchParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 const ProductPage = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const initialCategory = searchParams.getAll("category");
-  const dispatch = useDispatch();
-  const watches = useSelector((store) => store.appReducer.watches);
-  const [category, setCategory] = useState("");
-  const [color, setColor] = useState("Pink");
-  const [order, setOrder] = useState("asc");
-
-  const handleFiltering = (category) => {
-    // console.log(color)
-
-    setCategory(category);
-    setColor(color);
-  };
+  const location = useLocation()
+  const [searchParams] = useSearchParams()
+  const dispatch = useDispatch()
+  const watches = useSelector((store) => store.appReducer.watches)
 
   useEffect(() => {
-    console.log(color);
-    dispatch(getFilterdWatches(category));
-  }, [category]);
-
-  useEffect(() => {
-    dispatch(getWatches(order));
-  }, [order]);
-
-  const SortbyPrice = (val) => {
-    setOrder(val);
-  };
+    const sort = searchParams.get("sort")
+    const color = searchParams.get("color")
+    const paramObj = {
+      params: {
+        color: color,
+        sort: sort,
+      },
+    }
+    dispatch(getWatches(paramObj))
+  }, [location.search])
 
   return (
     <div>
-      <ProductCardTopBar handleFiltering={handleFiltering} />
+      <ProductCardTopBar />
       <div style={{ display: "flex" }}>
-        <ProductCardSideBar
-          handleFiltering={handleFiltering}
-          SortbyPrice={SortbyPrice}
-        />
+        <ProductCardSideBar />
         <ProductCard watches={watches} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductPage;
+export default ProductPage
