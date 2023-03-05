@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-
+import axios from "axios"
 export default function AdminLogin() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -27,17 +27,11 @@ export default function AdminLogin() {
       email,
       password,
     }
-      // fetch(`${BackendURL}/admin/login`, {
-      //   method: "POST",
-      //   body: JSON.stringify(payload),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // })
-      .then((res) => res.json())
+    axios
+      .post("http://localhost:8080/admin/login", payload)
       .then((res) => {
-        if (res.token) {
-          // res.msg === "login successfull"
+        console.log(res.data)
+        if (res.data.token) {
           toast({
             title: "Logged in Successfully",
             status: "success",
