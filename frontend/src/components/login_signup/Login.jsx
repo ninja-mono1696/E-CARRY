@@ -6,57 +6,55 @@ import {
   Input,
   Checkbox,
   Stack,
-  Link,
   Button,
   Heading,
   Text,
   useColorModeValue,
   useToast,
 } from "@chakra-ui/react"
+
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
-export default function AdminLogin() {
+import { Link } from "react-router-dom"
+export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  let navigate = useNavigate()
+  const navigate = useNavigate()
   const toast = useToast()
-
   const handleSubmit = () => {
-    const payload = {
-      email,
-      password,
-    }
-    axios
-      .post("http://localhost:8080/admin/login", payload)
-      .then((res) => {
-        console.log(res.data)
-        if (res.data.token) {
-          toast({
-            title: "Logged in Successfully",
-            status: "success",
-            duration: 3000,
-            isClosable: true,
-          })
-          navigate(`/admin`)
-        } else if (!res.token) {
-          toast({
-            title: "Wrong Credentials",
-            status: "error",
-            duration: 3000,
-            isClosable: true,
-          })
-        }
-      })
-      .catch((err) => {
-        console.log(err.msg)
-        toast({
-          title: "Invalid Request",
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        })
-      })
+    //   const payload = {
+    //     email,
+    //     password,
+    //   }
+    //   //console.log(payload)
+    //   fetch(`${BackendURL}/user/login`, {
+    //     method: "POST",
+    //     body: JSON.stringify(payload),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   })
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //       if (res.token) {
+    //         // res.msg === "login successfull"
+    //         toast({
+    //           title: "Logged in Successfully",
+    //           status: "success",
+    //           duration: 3000,
+    //           isClosable: true,
+    //         })
+    //         navigate(`/products`)
+    //       } else if (!res.token) {
+    //         toast({
+    //           title: "Wrong Credentials",
+    //           status: "error",
+    //           duration: 3000,
+    //           isClosable: true,
+    //         })
+    //       }
+    //     })
+    //     .catch((err) => console.log(err))
   }
 
   return (
@@ -68,9 +66,9 @@ export default function AdminLogin() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"4xl"}>Sign in to Admin Account!</Heading>
+          <Heading fontSize={"4xl"}>Sign in to your account</Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            To access Admin page 👨‍💻
+            to enjoy all of our cool <Link color={"red.400"}>Services</Link> ✌️
           </Text>
         </Stack>
         <Box
@@ -113,8 +111,9 @@ export default function AdminLogin() {
                 }}
                 onClick={handleSubmit}
               >
-                Proceed
+                Sign in
               </Button>
+              <Link to="/signup">Create new account </Link>
             </Stack>
           </Stack>
         </Box>
