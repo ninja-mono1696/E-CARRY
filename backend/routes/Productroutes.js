@@ -1,8 +1,8 @@
 const express = require("express")
-const productRouter = express.Router()
+const ProductRouter = express.Router()
 const { ProductModel } = require("../model/product.model")
 
-productRouter.get("/", async (req, res) => {
+ProductRouter.get("/", async (req, res) => {
   let query = {}
   if (req.query.color) {
     query.color = req.query.color
@@ -18,12 +18,6 @@ productRouter.get("/", async (req, res) => {
   }
 })
 
-productRouter.post("/post", () => {})
-
-productRouter.post("/update", () => {})
-
-productRouter.post("/delete", () => {})
-
 module.exports = {
-  productRouter,
+  ProductRouter,
 }
