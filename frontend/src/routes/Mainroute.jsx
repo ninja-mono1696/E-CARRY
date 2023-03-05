@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import Login from "../components/login/Log"
 import SimpleSidebar from "../pages/accountPage/Account"
 import Admin from "../pages/admin/Admin"
+import AdminLogin from "../pages/admin/AdminLogin"
 import Analytics from "../pages/admin/Analytics"
 import Cart from "../pages/cartPage/Cart"
 import Checkout from "../pages/checkoutPage/Checkout"
@@ -23,6 +24,7 @@ const Mainroute = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/products" element={<ProductPage />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
