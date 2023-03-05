@@ -1,6 +1,7 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
-import Login from "../components/login/Log"
+import Login from "../components/login_signup/Login"
+import Signup from "../components/login_signup/Signup"
 import SimpleSidebar from "../pages/accountPage/Account"
 import Admin from "../pages/admin/Admin"
 import AdminLogin from "../pages/admin/AdminLogin"
@@ -22,6 +23,7 @@ const Mainroute = () => {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Analytics />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/search" element={<Search />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
