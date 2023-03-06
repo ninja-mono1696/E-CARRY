@@ -9,7 +9,7 @@ AdminRouter.post("/register", async (req, res) => {
   const admin = await AdminModel.find({ email })
   try {
     if (admin.length > 0) {
-      res.send("Admin already exists,please login ")
+      res.send({ msg: "Admin already exists,please login" })
     } else {
       bcrypt.hash(password, 5, async (err, hash) => {
         if (err) {
