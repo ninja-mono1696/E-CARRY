@@ -22,39 +22,37 @@ export default function Login() {
   const navigate = useNavigate()
   const toast = useToast()
   const handleSubmit = () => {
-    //   const payload = {
-    //     email,
-    //     password,
-    //   }
-    //   //console.log(payload)
-    //   fetch(`${BackendURL}/user/login`, {
-    //     method: "POST",
-    //     body: JSON.stringify(payload),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //       if (res.token) {
-    //         // res.msg === "login successfull"
-    //         toast({
-    //           title: "Logged in Successfully",
-    //           status: "success",
-    //           duration: 3000,
-    //           isClosable: true,
-    //         })
-    //         navigate(`/products`)
-    //       } else if (!res.token) {
-    //         toast({
-    //           title: "Wrong Credentials",
-    //           status: "error",
-    //           duration: 3000,
-    //           isClosable: true,
-    //         })
-    //       }
-    //     })
-    //     .catch((err) => console.log(err))
+    const payload = {
+      email,
+      password,
+    }
+    fetch(`http://localhost:8080/user/login`, {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.token) {
+          toast({
+            title: "Logged in Successfully",
+            status: "success",
+            duration: 3000,
+            isClosable: true,
+          })
+          navigate(`/products`)
+        } else if (!res.token) {
+          toast({
+            title: "Wrong Credentials",
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+          })
+        }
+      })
+      .catch((err) => console.log(err))
   }
 
   return (

@@ -5,12 +5,13 @@ const cors = require("cors")
 const { ProductModel } = require("./model/product.model")
 const { ProductRouter } = require("./routes/Productroutes")
 const { AdminRouter } = require("./routes/admin.routes")
+const { UserRouter } = require("./routes/user.routes")
 const app = express()
 app.use(express.json())
 app.use(cors())
 app.use("/products", ProductRouter)
 app.use("/admin", AdminRouter)
-
+app.use("/user", UserRouter)
 app.listen(process.env.PORT, async () => {
   try {
     await connection
