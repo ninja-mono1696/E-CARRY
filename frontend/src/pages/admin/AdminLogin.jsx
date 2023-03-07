@@ -28,7 +28,7 @@ export default function AdminLogin() {
       password,
     }
     axios
-      .post("http://localhost:8080/admin/login", payload)
+      .post("https://vast-erin-badger-wear.cyclic.app/admin/login", payload)
       .then((res) => {
         console.log(res.data)
         if (res.data.token) {

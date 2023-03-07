@@ -26,7 +26,7 @@ export default function Login() {
       email,
       password,
     }
-    fetch(`http://localhost:8080/user/login`, {
+    fetch(`https://vast-erin-badger-wear.cyclic.app/user/login`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

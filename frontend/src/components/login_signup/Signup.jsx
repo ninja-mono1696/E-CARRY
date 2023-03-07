@@ -35,7 +35,7 @@ export default function Signup() {
       city,
     }
 
-    fetch(`http://localhost:8080/user/register`, {
+    fetch(`https://vast-erin-badger-wear.cyclic.app/user/register`, {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {

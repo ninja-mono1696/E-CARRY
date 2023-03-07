@@ -40,7 +40,7 @@ export const getUserAddressAction = () => {
 export const getWatches = (param) => (dispatch) => {
   dispatch(getProdcutRequestAction())
   axios
-    .get(`https://fine-pear-hermit-crab-belt.cyclic.app/product/`, param)
+    .get(`https://vast-erin-badger-wear.cyclic.app/products/`, param)
     .then((res) => {
       console.log(res.data)
       dispatch(getProdcutSuccessAction(res.data))
