@@ -4,7 +4,7 @@ import { ProductCardTopBar } from "../../components/productCard/ProductCardTopBa
 import { ProductCardSideBar } from "../../components/productCard/productCardSideBar"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getFilterdWatches, getWatches } from "../../redux/appReducer/action"
+import { getWatches } from "../../redux/appReducer/action"
 import { useSearchParams } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 const ProductPage = () => {

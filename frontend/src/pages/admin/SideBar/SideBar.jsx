@@ -1,22 +1,6 @@
 import React, { useState } from "react"
-import {
-  Flex,
-  Text,
-  IconButton,
-  Divider,
-  Avatar,
-  Heading,
-} from "@chakra-ui/react"
-import {
-  FiMenu,
-  FiHome,
-  FiCalendar,
-  FiUser,
-  FiDollarSign,
-  FiBriefcase,
-  FiSettings,
-  FiShoppingCart,
-} from "react-icons/fi"
+import { Flex, Text, IconButton, Divider, Heading } from "@chakra-ui/react"
+import { FiMenu, FiHome, FiUser, FiShoppingCart } from "react-icons/fi"
 import NavItem from "./NavItem"
 export default function Sidebar() {
   const [navSize, changeNavSize] = useState("large")
@@ -62,11 +46,12 @@ export default function Sidebar() {
           ion={FiShoppingCart}
           title="Add Products"
         />
-        <NavItem navSize={navSize} icon={FiUser} title="Clients" />
-        <NavItem navSize={navSize} icon={FiDollarSign} title="Billing" />
-        <NavItem navSize={navSize} icon={FiBriefcase} title="Reports" />
-        <NavItem navSize={navSize} icon={FiCalendar} title="Calendar" />
-        <NavItem navSize={navSize} icon={FiSettings} title="Settings" />
+        <NavItem
+          navSize={navSize}
+          goTo="/admin/deleteproducts"
+          icon={FiUser}
+          title="Delete Products"
+        />
       </Flex>
 
       <Flex

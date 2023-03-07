@@ -6,6 +6,7 @@ import SimpleSidebar from "../pages/accountPage/Account"
 import Admin from "../pages/admin/Admin"
 import AdminLogin from "../pages/admin/AdminLogin"
 import Analytics from "../pages/admin/Analytics"
+import DeleteProducts from "../pages/admin/DeleteProducts"
 import Cart from "../pages/cartPage/Cart"
 import Checkout from "../pages/checkoutPage/Checkout"
 import { Ordersucessful } from "../pages/checkoutPage/OrderSucessful"
@@ -33,6 +34,7 @@ const Mainroute = () => {
         <Route path="/payment/" element={<Payment />} />
         <Route path="/payment/os" element={<Ordersucessful />} />
         <Route path="/admin/product" element={<Admin />} />
+        <Route path="/admin/deleteproducts" element={<DeleteProducts />} />
         <Route path="/search/:id" element={<SingleCard />} />
         <Route path="/simpleside" element={<SimpleSidebar />} />
       </Routes>
