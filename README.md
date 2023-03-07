@@ -36,6 +36,6 @@ This a collaborative team project of four members to make a responsive E-commerc
 ## Responsibilities :-
 
 1. Navbar, Footer, Landing page - Monojit
-2. Admin page, Search page, Login/Signup - Mohtashim
+2. Admin page and Admin Signup/Login, Search page,User Login/Signup - Mohtashim
 3. Product page, Single product page, Cart, Checkout - Kavita
 4. Account page(Login, Wishlist, Account Info, FAQs) - Niraj
