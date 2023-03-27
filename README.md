@@ -6,7 +6,7 @@
 
 To create a E-commerce website for daily objects like mobile cover/cases, wallet, bag, etc.
 
-## Description :-
+## Description :- This is a online shopping E-commerce website for phone cases, covers, lifestyle & personal accessories.A collaborative project built by a team of 4 developers.
 
 This a collaborative team project of four members to make a responsive E-commerce website within 5 days. Various features like -
 
